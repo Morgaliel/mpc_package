@@ -2,12 +2,19 @@
 ## Paczka dedykowane jest do symulatora F1TENTH opartego na symulatorze [AWSIM v1.1.0](https://github.com/PPI-PUT/autoware/tree/f1tenth)
 
 # Model pojazdu:
-Jako model pojazdu (samochodu), o który został oparty cały kontroler wybrano tzw. kinematyczny model roweru. Został on poddany reaformulacji w celu dostosowania go do realizowanego zadania - podążania za trajektorią ścieżki toru. Model przestrzenny (ang. Spatial Bicycle [3]) został sformuowany na podstawie grafki poniżej - zmiennymi stanu są: odsunięcie poprzeczne od ścieżki, błąd kąta _yaw_ oraz dystans przebytu wzdłuż trajektorii. 
+Jako model pojazdu (samochodu), o który został oparty cały kontroler wybrano tzw. kinematyczny model roweru. Został on poddany reformulacji w celu dostosowania go do realizowanego zadania - podążania za trajektorią ścieżki toru. Model przestrzenny (ang. Spatial Bicycle [3]) został sformułowany na podstawie grafki poniżej - zmiennymi stanu są: odsunięcie poprzeczne od ścieżki, błąd kąta _yaw_ oraz dystans przebyty wzdłuż trajektorii.  
 
 ![image](https://github.com/Morgaliel/mpc_package/assets/64833115/711440e3-7635-45a3-bd71-b222e1e3f613)  
 [Model roweru z zaznaczonym układem odniesienia do referencyjnej ścieżki. (ref: [3])
 
-MPC zwraca jako sterowanie: kąt skrętu koła oraz prędkość wzdłuż osi pojazdu. Regulatorem prędkości jest dodatkowy regulator PID.
+MPC zwraca jako sterowanie: kąt skrętu koła oraz prędkość wzdłuż osi pojazdu. Regulatorem prędkości jest dodatkowy regulator PID.  
+
+Ograniczenia nałożone na pojazd:  
+v_max = 10.0  
+delta_max = pi/3.0  
+ay_max = 8.0  
+ax_min = -7.0  
+ax_max = 4.0  
 
 # Ścieżka referencyjna:
 Ścieżka referencyjna została wyznaczona ręcznie jako zbiór kilkudziesięciu punktów wzdłuż trasy (gdzie punkt początkowy jest pierwyszym punktem). Rozdzielczość ścieżki ([waypoint/m]) została zwiększona/dopasowana bazując na mapie zajętości podanej jako obraz. Referencyjna prędkość oraz kąt skierowania pojazdu zostały wyznaczone z uwzględnieniem fizycznych ograniczeń: przyspieszeń wzdłużnych i poprzecznych oraz prędkości maksymalnej. Punkt od którego liczony jest horyzont predykcji wyznaczany jest jako kartezjańsko najbliższy punkt z listy punktów referencyjnych. 
