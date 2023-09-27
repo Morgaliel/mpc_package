@@ -5,6 +5,7 @@
 Jako model pojazdu (samochodu), o który został oparty cały kontroler wybrano tzw. kinematyczny model roweru. Został on poddany reaformulacji w celu dostosowania go do realizowanego zadania - podążania za trajektorią ścieżki toru. Model przestrzenny (ang. Spatial Bicycle [3]) został sformuowany na podstawie grafki poniżej - zmiennymi stanu są: odsunięcie poprzeczne od ścieżki, błąd kąta _yaw_ oraz dystans przebytu wzdłuż trajektorii. 
 
 ![image](https://github.com/Morgaliel/mpc_package/assets/64833115/711440e3-7635-45a3-bd71-b222e1e3f613)
+
 [Model roweru z zaznaczonym układem odniesienia do referencyjnej ścieżki. (ref: [3])
 
 MPC zwraca jako sterowanie: kąt skrętu koła oraz prędkość wzdłuż osi pojazdu. Regulatorem prędkości jest dodatkowy regulator PID.
@@ -38,9 +39,9 @@ Zestawienie przebiegów prędkości pojazdu w funkcji drogi przebytej wzdłuż �
 
 # Napotkane problemy:
 
-Rozbieżność między lokalizają pozyskiwaną z _ground_truth_, a lokalizajcą pojadu w symulatorze nie pozwalała na łatwe dostosowywanie ścieżki w celach optymalizaji czasu przejazdu. W pojedunczych zakrętach trzebabyło  
+Rozbieżność między lokalizają pozyskiwaną z _ground_truth_, a lokalizacją pojadu w symulatorze nie pozwalała na łatwe dostosowywanie ścieżki w celach optymalizaji czasu przejazdu. W pojedynczych zakrętach należało dodać dodatkowe waypointy na mapie, aby uniknąć kolizji ze ścianą.
 Linearyzajca modelu (szczególnie np. przy większych skrętach kierownicy) niepozwala na uzyskanie płynnych i nieoscylujących rozwiązań. 
-Brak znajomości parametrów pojazdu z symulatora (zastosowanego modelu, geometrii skrętu, itd.) nie pozwiliła na dokładne dobranie parametrów modelu - przy tak prostym przyjętym modelu nie sprawiało to większego problemu. 
+Brak znajomości parametrów pojazdu z symulatora (zastosowanego modelu, geometrii skrętu, itd.) nie pozwoliła na dokładne dobranie parametrów modelu - przy tak prostym przyjętym modelu nie sprawiało to większego problemu. 
 
 Bibliografia: 
 * [1] https://github.com/coldhenry/Model-Predictive-Control-of-Autonomous-Car
