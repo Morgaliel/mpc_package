@@ -17,7 +17,10 @@ ax_min = -7.0
 ax_max = 4.0  
 
 # Ścieżka referencyjna:
-Ścieżka referencyjna została wyznaczona ręcznie jako zbiór kilkudziesięciu punktów wzdłuż trasy (gdzie punkt początkowy jest pierwyszym punktem). Rozdzielczość ścieżki ([waypoint/m]) została zwiększona/dopasowana bazując na mapie zajętości podanej jako obraz. Referencyjna prędkość oraz kąt skierowania pojazdu zostały wyznaczone z uwzględnieniem fizycznych ograniczeń: przyspieszeń wzdłużnych i poprzecznych oraz prędkości maksymalnej. Punkt od którego liczony jest horyzont predykcji wyznaczany jest jako kartezjańsko najbliższy punkt z listy punktów referencyjnych. 
+Ścieżka referencyjna została wyznaczona ręcznie jako zbiór kilkudziesięciu punktów wzdłuż trasy (gdzie punkt początkowy jest pierwyszym punktem). Rozdzielczość ścieżki ([waypoint/m]) została zwiększona/dopasowana bazując na mapie zajętości podanej jako obraz. Referencyjna prędkość oraz kąt skierowania pojazdu zostały wyznaczone z uwzględnieniem fizycznych ograniczeń: przyspieszeń wzdłużnych i poprzecznych oraz prędkości maksymalnej. Punkt od którego liczony jest horyzont predykcji wyznaczany jest jako kartezjańsko najbliższy punkt z listy punktów referencyjnych.  
+![ref_path](https://github.com/Morgaliel/mpc_package/assets/58528111/785fafbe-5f87-4164-8448-3ac6220cc9e1)  
+Ścieżka referencyjna - waypointy wpisane ręcznie (kolor niebieski) oraz wyliczone na ich podstawie i poddane smoothingowi (kolor czerwony)
+
 
 # Solver:
 [OSQP](https://osqp.org/docs/examples/mpc.html)
