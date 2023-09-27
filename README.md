@@ -5,7 +5,7 @@
 Jako model pojazdu (samochodu), o który został oparty cały kontroler wybrano tzw. kinematyczny model roweru. Został on poddany reformulacji w celu dostosowania go do realizowanego zadania - podążania za trajektorią ścieżki toru. Model przestrzenny (ang. Spatial Bicycle [3]) został sformułowany na podstawie grafki poniżej - zmiennymi stanu są: odsunięcie poprzeczne od ścieżki, błąd kąta _yaw_ oraz dystans przebyty wzdłuż trajektorii.  
 
 ![image](https://github.com/Morgaliel/mpc_package/assets/64833115/711440e3-7635-45a3-bd71-b222e1e3f613)  
-[Model roweru z zaznaczonym układem odniesienia do referencyjnej ścieżki. (ref: [3])
+[Model roweru z zaznaczonym układem odniesienia do referencyjnej ścieżki. (ref: [3])]  
 
 MPC zwraca jako sterowanie: kąt skrętu koła oraz prędkość wzdłuż osi pojazdu. Regulatorem prędkości jest dodatkowy regulator PID.  
 
@@ -18,8 +18,9 @@ ax_max = 4.0
 
 # Ścieżka referencyjna:
 Ścieżka referencyjna została wyznaczona ręcznie jako zbiór kilkudziesięciu punktów wzdłuż trasy (gdzie punkt początkowy jest pierwyszym punktem). Rozdzielczość ścieżki ([waypoint/m]) została zwiększona/dopasowana bazując na mapie zajętości podanej jako obraz. Referencyjna prędkość oraz kąt skierowania pojazdu zostały wyznaczone z uwzględnieniem fizycznych ograniczeń: przyspieszeń wzdłużnych i poprzecznych oraz prędkości maksymalnej. Punkt od którego liczony jest horyzont predykcji wyznaczany jest jako kartezjańsko najbliższy punkt z listy punktów referencyjnych.  
+  
 ![ref_path](https://github.com/Morgaliel/mpc_package/assets/58528111/785fafbe-5f87-4164-8448-3ac6220cc9e1)  
-Ścieżka referencyjna - waypointy wpisane ręcznie (kolor niebieski) oraz wyliczone na ich podstawie i poddane smoothingowi (kolor czerwony)
+[Ścieżka referencyjna - waypointy wpisane ręcznie (kolor niebieski) oraz wyliczone na ich podstawie i poddane smoothingowi (kolor czerwony)]
 
 
 # Solver:
@@ -44,7 +45,7 @@ mpc_package
 # Porównanie z Pure Pursuit:
 Zestawienie przebiegów prędkości pojazdu w funkcji drogi przebytej wzdłuż środka toru.
 ![image](https://github.com/Morgaliel/mpc_package/assets/64833115/db509c6d-c070-4524-99fe-cf440dc37bcb)  
-(kolorem zielonym - MPC, żółtym - PP)  
+[kolorem zielonym - MPC, żółtym - PP]  
   
 Zauważalne jest zatem, że prędkość pojazdu przy zastosowaniu MPC jest dość poszarpana, co może wpływać ostatecznie na jej ograniczenie przez sam kontroler. Pure pursuit w tym przypadku okazało się lepsze, choć prawdopodobnie jest to spowodowane problemami opisanymi poniżej.
 
