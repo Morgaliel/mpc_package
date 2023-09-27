@@ -32,7 +32,9 @@ mpc_package
 ```
 
 # Porównanie z Pure Pursuit:
-
+Zestawienie przebiegów prędkości pojazdu w funkcji drogi przebytej wzdłuż środka toru.
+![image](https://github.com/Morgaliel/mpc_package/assets/64833115/db509c6d-c070-4524-99fe-cf440dc37bcb)
+(kolorem zielonym - MPC, żółtym - PP)
 
 # Napotkane problemy:
 
