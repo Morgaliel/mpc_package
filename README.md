@@ -33,13 +33,15 @@ mpc_package
 
 # Porównanie z Pure Pursuit:
 Zestawienie przebiegów prędkości pojazdu w funkcji drogi przebytej wzdłuż środka toru.
-![image](https://github.com/Morgaliel/mpc_package/assets/64833115/db509c6d-c070-4524-99fe-cf440dc37bcb)
-(kolorem zielonym - MPC, żółtym - PP)
+![image](https://github.com/Morgaliel/mpc_package/assets/64833115/db509c6d-c070-4524-99fe-cf440dc37bcb)  
+(kolorem zielonym - MPC, żółtym - PP)  
+  
+Zauważalne jest zatem, że prędkość pojazdu przy zastosowaniu MPC jest dość poszarpana, co może wpływać ostatecznie na jej ograniczenie przez sam kontroler. Pure pursuit w tym przypadku okazało się lepsze, choć prawdopodobnie jest to spowodowane problemami opisanymi poniżej.
 
 # Napotkane problemy:
 
-Rozbieżność między lokalizają pozyskiwaną z _ground_truth_, a lokalizacją pojadu w symulatorze nie pozwalała na łatwe dostosowywanie ścieżki w celach optymalizaji czasu przejazdu. W pojedynczych zakrętach należało dodać dodatkowe waypointy na mapie, aby uniknąć kolizji ze ścianą.
-Linearyzajca modelu (szczególnie np. przy większych skrętach kierownicy) niepozwala na uzyskanie płynnych i nieoscylujących rozwiązań. 
+Rozbieżność między lokalizają pozyskiwaną z _ground_truth_, a lokalizacją pojadu w symulatorze nie pozwalała na łatwe dostosowywanie ścieżki w celach optymalizaji czasu przejazdu. W pojedynczych zakrętach należało dodać dodatkowe punkty na mapie, aby uniknąć kolizji ze ścianą.  
+Linearyzajca modelu (szczególnie np. przy większych skrętach kierownicy) niepozwala na uzyskanie płynnych i nieoscylujących rozwiązań.  
 Brak znajomości parametrów pojazdu z symulatora (zastosowanego modelu, geometrii skrętu, itd.) nie pozwoliła na dokładne dobranie parametrów modelu - przy tak prostym przyjętym modelu nie sprawiało to większego problemu.
 
 
