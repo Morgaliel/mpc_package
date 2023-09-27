@@ -120,11 +120,6 @@ class ReferencePath:
         n_wp = [int(np.sqrt((wp_x[i + 1] - wp_x[i]) ** 2 +
                             (wp_y[i + 1] - wp_y[i]) ** 2) /
                     self.resolution) for i in range(len(wp_x) - 1)]
-        
-        for i in range(len(wp_x)):
-            print("wp_x[",i,"] = ",wp_x[i-1])
-        print("n_wp = ",n_wp)
-        print("len(wp_x) = ",len(wp_x))
 
         # Construct waypoints with specified resolution
         gp_x, gp_y = wp_x[-1], wp_y[-1]
